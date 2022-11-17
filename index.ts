@@ -5,7 +5,7 @@ const main = async () => {
   const connection = new Connection(endpoint);
   const id = "44aff48de21f92d8361708f6ef21dbb4774042962198646882d20e495a87778d";
   const tx = await connection.getTransaction(id)
-  console.log(tx.asset.id)
+  console.log(tx.asset)
   console.log(tx.operation)
   switch(tx.operation) {
     //case TransactionOperations.TRANSFER:

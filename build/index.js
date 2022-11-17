@@ -16,7 +16,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const connection = new bigchaindb_driver_1.Connection(endpoint);
     const id = "44aff48de21f92d8361708f6ef21dbb4774042962198646882d20e495a87778d";
     const tx = yield connection.getTransaction(id);
-    console.log(tx.asset.id);
+    console.log(tx.asset);
     console.log(tx.operation);
     switch (tx.operation) {
         //case TransactionOperations.TRANSFER:
