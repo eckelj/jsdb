@@ -10,21 +10,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const bigchaindb_driver_1 = require("bigchaindb-driver");
-//import { TransactionOperations } from "bigchaindb-driver/types/transaction"
-const endpoint = "https://test.ipdb.io/api/v1/";
+const endpoint = 'https://test.ipdb.io/api/v1/';
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const connection = new bigchaindb_driver_1.Connection(endpoint);
-    const id = "44aff48de21f92d8361708f6ef21dbb4774042962198646882d20e495a87778d";
+    const id = '44aff48de21f92d8361708f6ef21dbb4774042962198646882d20e495a87778d';
     const tx = yield connection.getTransaction(id);
     console.log(tx.asset);
     console.log(tx.operation);
     switch (tx.operation) {
-        //case TransactionOperations.TRANSFER:
-        //console.log(tx.asset.id)
-        //break;
-        //case TransactionOperations.CREATE:
-        //console.log(tx.asset.data)
-        //break;
+        case 'TRANSFER':
+            console.log(tx.asset.id);
+            break;
+        case 'CREATE':
+            console.log(tx.asset.data);
+            break;
     }
 });
-main();
+(function () {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield main();
+    });
+})();

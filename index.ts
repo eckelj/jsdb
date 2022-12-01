@@ -1,4 +1,6 @@
-import { Connection, TransactionOperations } from 'bigchaindb-driver';
+import { Connection } from 'bigchaindb-driver';
+import type { TransactionOperations } from 'bigchaindb-driver';
+
 const endpoint = 'https://test.ipdb.io/api/v1/';
 const main = async () => {
   const connection = new Connection(endpoint);
@@ -9,10 +11,10 @@ const main = async () => {
   console.log(tx.asset);
   console.log(tx.operation);
   switch (tx.operation) {
-    case TransactionOperations.TRANSFER:
+    case 'TRANSFER':
       console.log(tx.asset.id);
       break;
-    case TransactionOperations.CREATE:
+    case 'CREATE':
       console.log(tx.asset.data);
       break;
   }
